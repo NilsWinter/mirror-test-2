@@ -23,7 +23,7 @@ jobs:
         run: |
           git config --global user.name 'Nils Winter'
           git config --global user.email 'nilswinter@users.noreply.github.com'
-          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/NilsWinter/mirror-test-2
+          git remote set-url origin https://x-access-token:${{ secrets.YOUR_SECRET_KEY }}@github.com/NilsWinter/mirror-test-2
           git checkout master
           git push
 
