@@ -20,7 +20,8 @@ jobs:
       - uses: actions/checkout@v2
         with:
           token: ${{ secrets.YOUR_SECRET_KEY }} 
-      - name: Push
+          fetch-depth: 0
+      - name: Push to public repo
         run: |
           git config --global user.name 'Nils Winter'
           git config --global user.email 'nilswinter@users.noreply.github.com'
