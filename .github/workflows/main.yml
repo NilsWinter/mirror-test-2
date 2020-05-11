@@ -18,10 +18,13 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - uses: actions/checkout@master
-    - name: Push changes
-      uses: NilsWinter/github-push-action@master
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/checkout@v1
+      - name: Push
+        run: |
+          git config --global user.name 'Nils Winter'
+          git config --global user.email 'nilswinter@users.noreply.github.com'
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/NilsWinter/mirror-test-2
+          git checkout master
+          git push
 
 
